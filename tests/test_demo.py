@@ -14,7 +14,7 @@ with open('./config/steps/api_steps.yaml') as f:
 
 @pytest.mark.parametrize("test_step", test_steps)
 def test_api(test_step):
-    url = f"http://api.example.com{test_step['endpoint']}"
+    url = f"https://reqres.in/{test_step['endpoint']}"
     method = test_step['method']
     expected_status = test_step['expected_status']
 
