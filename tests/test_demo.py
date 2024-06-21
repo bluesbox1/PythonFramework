@@ -5,11 +5,11 @@ import yaml
 from jsonschema import validate, ValidationError
 
 # Load JSON schema
-with open('response_schema.json') as f:
+with open('./schema/contract1.json') as f:
     schema = json.load(f)
 
 # Load test steps from YAML
-with open('test_steps.yaml') as f:
+with open('./config/steps/api_steps.yaml') as f:
     test_steps = yaml.safe_load(f)['tests']
 
 @pytest.mark.parametrize("test_step", test_steps)
