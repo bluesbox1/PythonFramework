@@ -1,8 +1,10 @@
 tests:
+  TC1:
   - name: "Test Get User"
     endpoint: "/api/users/2"
     method: "GET"
     expected_status: 200
+  TC2:
   - name: "Test Get Nonexistent User"
     endpoint: "api/users/9999"
     method: "GET"
