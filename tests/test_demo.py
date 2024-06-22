@@ -12,11 +12,11 @@ with open('./schema/contract1.json') as f:
 with open('./config/steps/api_steps.yaml') as f:
     test_steps = yaml.safe_load(f)['tests']
 
-@pytest.mark.parametrize("test_step", test_steps)
-def test_api(test_step):
-    url = f"https://reqres.in/{test_step['endpoint']}"
-    method = test_step['method']
-    expected_status = test_step['expected_status']
+@pytest.mark.parametrize("test_case_", test_steps, ids=[step['name'] for step in test_steps])
+def test_api(test_case_):
+    url = f"https://reqres.in/{test_case_['endpoint']}"
+    method = test_case_['method']
+    expected_status = test_case_['expected_status']
 
     response = requests.request(method, url)
     assert response.status_code == expected_status, f"Expected status {expected_status}, got {response.status_code}"
