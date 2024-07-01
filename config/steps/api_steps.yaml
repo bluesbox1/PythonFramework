@@ -1,6 +1,6 @@
 tests:
   - name: "Test Get User"
-    endpoint: "/api/users/2"
+    endpoint: "/api/users/3"
     method: "GET"
     expected_status: 200
   - name: "Test Get Nonexistent User"
